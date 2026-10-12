@@ -1,0 +1,1591 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#17191c" />
+  <meta name="description"
+    content="Personal training com Lucas Martins, formado em Educação Física e pós-graduando em Neurociência Aplicada à Saúde e Bem-Estar." />
+  <title>Lucas Martins | Personal Trainer</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Barlow+Condensed:wght@600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f5f4ef;
+      --ink: #18211d;
+      --muted: #68716b;
+      --lime: #d4f45b;
+      --line: #d9dcd4;
+      --white: #fff;
+      --display: "Barlow Condensed", Impact, sans-serif;
+      --body: "Archivo", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--body);
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    select {
+      font: inherit;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .wrap {
+      width: min(1180px, calc(100% - 64px));
+      margin-inline: auto;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.1px;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      width: 22px;
+      height: 2px;
+      background: #91b520;
+      content: "";
+    }
+
+    .display {
+      margin: 0;
+      font-family: var(--display);
+      font-weight: 800;
+      line-height: .91;
+      text-transform: uppercase;
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 52px;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      padding: 0 21px;
+      border: 1px solid var(--ink);
+      background: var(--ink);
+      color: var(--white);
+      font-size: 12px;
+      font-weight: 700;
+      transition: background .2s ease, color .2s ease, transform .2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      background: transparent;
+      color: var(--ink);
+    }
+
+    .button svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .header {
+      position: relative;
+      z-index: 5;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      display: flex;
+      min-height: 78px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: .7px;
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 31px;
+      height: 31px;
+      place-items: center;
+      background: var(--lime);
+    }
+
+    .brand-mark svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .brand small {
+      display: block;
+      margin-top: -3px;
+      color: var(--muted);
+      font-size: 8px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 31px;
+    }
+
+    .nav-links>a:not(.button) {
+      color: #404a44;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .nav-links>a:not(.button):hover {
+      color: #7b9e15;
+    }
+
+    .nav-links .button {
+      min-height: 42px;
+      padding-inline: 16px;
+      font-size: 11px;
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      border: 1px solid var(--line);
+      background: transparent;
+      color: var(--ink);
+    }
+
+    .menu-toggle svg {
+      width: 19px;
+      height: 19px;
+    }
+
+    .hero {
+      display: grid;
+      min-height: 600px;
+      grid-template-columns: 1fr .91fr;
+      align-items: center;
+      gap: 42px;
+      padding-block: 48px 58px;
+    }
+
+    .hero-copy {
+      position: relative;
+      z-index: 1;
+      padding-block: 30px;
+      animation: rise .7s both;
+    }
+
+    .hero h1 {
+      max-width: 650px;
+      font-size: clamp(76px, 9vw, 120px);
+      letter-spacing: 0;
+    }
+
+    .hero h1 span {
+      color: #819f18;
+    }
+
+    .hero-text {
+      max-width: 420px;
+      margin: 22px 0 27px;
+      color: #515c55;
+      font-size: 15px;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .text-link svg {
+      width: 15px;
+      height: 15px;
+    }
+
+    .hero-proof {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      margin-top: 43px;
+    }
+
+    .proof-number {
+      font-family: var(--display);
+      font-size: 31px;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .proof-copy {
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.4;
+    }
+
+    .proof-divider {
+      width: 1px;
+      height: 30px;
+      margin-inline: 10px;
+      background: var(--line);
+    }
+
+    .hero-visual {
+      position: relative;
+      min-width: 0;
+      height: 500px;
+      animation: rise .8s .12s both;
+    }
+
+    .hero-photo {
+      position: absolute;
+      inset: 0 23px 27px 0;
+      overflow: hidden;
+      background: #a7a99b;
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 52% 42%;
+    }
+
+    .photo-caption {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      width: 185px;
+      min-height: 103px;
+      flex-direction: column;
+      justify-content: center;
+      padding: 18px;
+      background: var(--lime);
+    }
+
+    .photo-caption strong {
+      font-family: var(--display);
+      font-size: 25px;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .photo-caption span {
+      margin-top: 7px;
+      font-size: 10px;
+      font-weight: 600;
+    }
+
+    .photo-index {
+      position: absolute;
+      top: 0;
+      right: 0;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 700;
+      writing-mode: vertical-rl;
+    }
+
+    .photo-index b {
+      color: var(--ink);
+    }
+
+    .ticker {
+      overflow: hidden;
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .ticker-inner {
+      display: flex;
+      min-height: 63px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .ticker-item {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      white-space: nowrap;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .8px;
+      text-transform: uppercase;
+    }
+
+    .ticker-item svg {
+      width: 17px;
+      height: 17px;
+      color: var(--lime);
+    }
+
+    .section {
+      padding-block: 108px;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 45px;
+    }
+
+    .section-heading h2 {
+      max-width: 580px;
+      font-size: clamp(52px, 6.2vw, 76px);
+    }
+
+    .section-heading>p {
+      max-width: 310px;
+      margin: 0 0 4px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--line);
+    }
+
+    .benefit {
+      min-height: 225px;
+      padding: 25px 28px 23px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .benefit+.benefit {
+      padding-left: 28px;
+      border-left: 1px solid var(--line);
+    }
+
+    .benefit-number {
+      color: #829d28;
+      font-family: var(--display);
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .benefit h3 {
+      margin: 35px 0 10px;
+      font-family: var(--display);
+      font-size: 28px;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .benefit p {
+      max-width: 290px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .programs {
+      padding-block: 82px 92px;
+      background: #e9ebe3;
+    }
+
+    .programs .section-heading {
+      margin-bottom: 35px;
+    }
+
+    .program-list {
+      border-top: 1px solid #cbd0c5;
+    }
+
+    .program {
+      display: grid;
+      min-height: 94px;
+      grid-template-columns: 65px 1fr minmax(180px, 280px) 25px;
+      align-items: center;
+      gap: 20px;
+      border-bottom: 1px solid #cbd0c5;
+      transition: padding .2s ease;
+    }
+
+    .program:hover {
+      padding-inline: 10px;
+    }
+
+    .program-index {
+      color: #7d8a74;
+      font-family: var(--display);
+      font-size: 17px;
+    }
+
+    .program h3 {
+      margin: 0;
+      font-family: var(--display);
+      font-size: 31px;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .program p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .program svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .story {
+      display: grid;
+      grid-template-columns: .85fr 1fr;
+      align-items: center;
+      gap: 100px;
+    }
+
+    .story-visual {
+      position: relative;
+      height: 405px;
+    }
+
+    .story-visual img {
+      width: calc(100% - 26px);
+      height: 100%;
+      object-fit: cover;
+      object-position: 50% 45%;
+    }
+
+    .story-label {
+      position: absolute;
+      right: 0;
+      bottom: 22px;
+      padding: 17px 20px;
+      background: var(--lime);
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .story-copy h2 {
+      margin: 0;
+      font-family: var(--display);
+      font-size: 43px;
+      font-weight: 700;
+      line-height: 1.04;
+      text-transform: uppercase;
+    }
+
+    .story-copy>p {
+      margin: 20px 0 25px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .story-person {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .person-mark {
+      display: grid;
+      width: 37px;
+      height: 37px;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--ink);
+      color: var(--lime);
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .story-person strong {
+      display: block;
+      font-size: 11px;
+    }
+
+    .story-person span {
+      display: block;
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    .contact {
+      padding-block: 76px;
+      background: var(--lime);
+    }
+
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr 390px;
+      align-items: center;
+      gap: 65px;
+    }
+
+    .contact h2 {
+      max-width: 610px;
+      font-size: clamp(56px, 7vw, 88px);
+    }
+
+    .contact-copy>p {
+      max-width: 390px;
+      margin: 18px 0 0;
+      color: #4d5a2d;
+      font-size: 13px;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 12px;
+    }
+
+    .contact-form label {
+      display: grid;
+      gap: 6px;
+      color: #374126;
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .contact-form input,
+    .contact-form select {
+      width: 100%;
+      min-height: 47px;
+      padding: 0 12px;
+      border: 1px solid #a6bd43;
+      border-radius: 0;
+      outline: none;
+      background: rgba(255, 255, 255, .55);
+      color: var(--ink);
+      font-size: 12px;
+    }
+
+    .contact-form input:focus,
+    .contact-form select:focus {
+      border-color: var(--ink);
+    }
+
+    .contact-form .button {
+      width: 100%;
+      margin-top: 4px;
+      border-color: var(--ink);
+      background: var(--ink);
+      color: var(--white);
+      cursor: pointer;
+    }
+
+    .contact-form .button:hover {
+      background: transparent;
+      color: var(--ink);
+    }
+
+    .form-note {
+      margin: 0;
+      color: #52602f;
+      font-size: 10px;
+      text-align: center;
+    }
+
+    .footer {
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .footer-main {
+      display: flex;
+      min-height: 110px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+    }
+
+    .footer .brand small {
+      color: #a7b0a8;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      color: #c5cbc4;
+      font-size: 10px;
+    }
+
+    .footer-links a:hover {
+      color: var(--lime);
+    }
+
+    .copyright {
+      padding-block: 14px;
+      border-top: 1px solid #35413a;
+      color: #f1f3f5;
+      font-size: 9px;
+    }
+
+    .copyright .wrap {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (min-width: 1440px) {
+      .hero h1 {
+        font-size: 128px;
+      }
+    }
+
+    @media (max-width: 850px) {
+      .wrap {
+        width: min(100% - 42px, 680px);
+      }
+
+      .hero {
+        min-height: 0;
+        grid-template-columns: 1fr .85fr;
+        gap: 20px;
+        padding-block: 53px;
+      }
+
+      .hero h1 {
+        font-size: clamp(65px, 11vw, 90px);
+      }
+
+      .hero-visual {
+        height: 420px;
+      }
+
+      .hero-text {
+        font-size: 13px;
+      }
+
+      .ticker-inner {
+        justify-content: flex-start;
+        overflow: auto;
+        scrollbar-width: none;
+      }
+
+      .ticker-item {
+        margin-right: 18px;
+      }
+
+      .section {
+        padding-block: 78px;
+      }
+
+      .story {
+        gap: 45px;
+      }
+
+      .story-copy h2 {
+        font-size: 35px;
+      }
+
+      .contact-inner {
+        grid-template-columns: 1fr 330px;
+        gap: 30px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .wrap {
+        width: calc(100% - 36px);
+      }
+
+      .nav {
+        min-height: 68px;
+      }
+
+      .menu-toggle {
+        display: grid;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 67px;
+        right: 0;
+        left: 0;
+        display: none;
+        align-items: stretch;
+        gap: 0;
+        padding: 8px 18px 17px;
+        border-bottom: 1px solid var(--line);
+        background: var(--paper);
+      }
+
+      .nav-links.is-open {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .nav-links>a:not(.button) {
+        padding: 12px 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .nav-links .button {
+        margin-top: 13px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 26px;
+        padding-block: 45px 38px;
+      }
+
+      .hero-copy {
+        padding: 0;
+      }
+
+      .hero h1 {
+        max-width: 470px;
+        font-size: clamp(72px, 18vw, 104px);
+      }
+
+      .hero-text {
+        max-width: 360px;
+        margin-block: 17px 20px;
+      }
+
+      .hero-proof {
+        margin-top: 27px;
+      }
+
+      .hero-visual {
+        height: min(108vw, 430px);
+        margin-right: 8px;
+      }
+
+      .hero-photo {
+        inset: 0 19px 20px 0;
+      }
+
+      .photo-caption {
+        width: 155px;
+        min-height: 85px;
+        padding: 14px;
+      }
+
+      .photo-caption strong {
+        font-size: 22px;
+      }
+
+      .ticker-inner {
+        min-height: 56px;
+      }
+
+      .ticker-item {
+        font-size: 9px;
+      }
+
+      .section {
+        padding-block: 68px;
+      }
+
+      .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+        margin-bottom: 28px;
+      }
+
+      .section-heading h2 {
+        font-size: 57px;
+      }
+
+      .section-heading>p {
+        font-size: 12px;
+      }
+
+      .benefits {
+        grid-template-columns: 1fr;
+      }
+
+      .benefit {
+        min-height: 0;
+        padding: 20px 0 23px;
+      }
+
+      .benefit+.benefit {
+        padding-left: 0;
+        border-left: 0;
+      }
+
+      .benefit h3 {
+        margin-top: 18px;
+      }
+
+      .programs {
+        padding-block: 65px;
+      }
+
+      .program {
+        min-height: 82px;
+        grid-template-columns: 29px 1fr 20px;
+        gap: 10px;
+      }
+
+      .program h3 {
+        font-size: 26px;
+      }
+
+      .program p {
+        display: none;
+      }
+
+      .story {
+        grid-template-columns: 1fr;
+        gap: 31px;
+      }
+
+      .story-visual {
+        height: min(95vw, 370px);
+      }
+
+      .story-copy h2 {
+        font-size: 39px;
+      }
+
+      .contact {
+        padding-block: 61px;
+      }
+
+      .contact-inner {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .contact h2 {
+        font-size: 66px;
+      }
+
+      .contact-copy>p {
+        margin-top: 12px;
+      }
+
+      .footer-main {
+        min-height: 0;
+        align-items: flex-start;
+        flex-direction: column;
+        padding-block: 28px;
+      }
+
+      .footer-links {
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+
+      .copyright .wrap {
+        flex-direction: column;
+        gap: 4px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+
+    :root {
+      color-scheme: dark;
+      --paper: #17191c;
+      --ink: #f1f3f5;
+      --muted: #a7adb4;
+      --lime: #d8c8ed;
+      --line: #383d43;
+      --white: #24282d;
+      --orange: #d8c8ed;
+      --surface: #22262a;
+      --accent-gradient: linear-gradient(135deg, #eee6f7 0%, #d5c4ed 100%);
+    }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+    }
+
+    .eyebrow::before,
+    .brand-mark {
+      background: var(--accent-gradient);
+    }
+
+    .button {
+      border-color: var(--orange);
+      background: var(--accent-gradient);
+      color: #22262a;
+    }
+
+    .button:hover {
+      background: transparent;
+      color: var(--orange);
+    }
+
+    .header {
+      position: fixed;
+      z-index: 10;
+      inset: 0 0 auto;
+      width: 100%;
+      border: 0;
+      background: rgba(23, 25, 28, .78);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      color: #fff;
+    }
+
+    main {
+      padding-top: 84px;
+    }
+
+    .nav {
+      min-height: 84px;
+      border-bottom: 1px solid rgba(255, 255, 255, .2);
+    }
+
+    .brand-mark {
+      color: #22262a;
+    }
+
+    .brand small,
+    .footer .brand small {
+      color: rgba(255, 255, 255, .62);
+    }
+
+    .nav-links>a:not(.button) {
+      color: rgba(255, 255, 255, .82);
+    }
+
+    .nav-links>a:not(.button):hover,
+    .footer-links a:hover {
+      color: var(--orange);
+    }
+
+    .nav-links .button {
+      min-height: 44px;
+      color: #22262a;
+    }
+
+    .menu-toggle {
+      border-color: rgba(255, 255, 255, .4);
+      color: #fff;
+    }
+
+    .hero {
+      position: relative;
+      display: flex;
+      width: 100%;
+      min-height: min(860px, 100svh);
+      align-items: center;
+      overflow: hidden;
+      padding: 150px max(32px, calc((100vw - 1180px) / 2)) 105px;
+      background: #17191c;
+    }
+
+    .hero-copy {
+      width: min(100%, 850px);
+      padding: 0;
+      animation: rise .7s both;
+    }
+
+    .hero h1 {
+      max-width: 850px;
+      color: #fff;
+      font-size: clamp(84px, 10vw, 132px);
+      line-height: .83;
+    }
+
+    .hero h1 span {
+      color: var(--orange);
+    }
+
+    .hero .eyebrow {
+      color: rgba(255, 255, 255, .78);
+    }
+
+    .hero-text {
+      max-width: 450px;
+      color: rgba(255, 255, 255, .78);
+    }
+
+    .hero .button {
+      color: #22262a;
+    }
+
+    .hero .button:hover {
+      color: #fff;
+    }
+
+    .hero .text-link,
+    .proof-number {
+      color: #fff;
+    }
+
+    .proof-copy {
+      color: rgba(255, 255, 255, .68);
+    }
+
+    .proof-divider {
+      background: rgba(255, 255, 255, .35);
+    }
+
+    .hero-visual {
+      position: absolute;
+      z-index: 0;
+      inset: 0;
+      height: auto;
+      margin: 0;
+      pointer-events: none;
+    }
+
+    .hero-photo {
+      inset: 0;
+      background: #1c1f22;
+    }
+
+    .hero-photo::after {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(14, 15, 17, .96) 0%, rgba(14, 15, 17, .78) 38%, rgba(14, 15, 17, .2) 100%), linear-gradient(0deg, rgba(14, 15, 17, .52), transparent 46%);
+      content: "";
+    }
+
+    .hero-photo img {
+      object-position: center 44%;
+      animation: photo-in 1.2s ease-out both;
+    }
+
+    .photo-index {
+      top: 46%;
+      right: max(22px, calc((100vw - 1180px) / 2));
+      color: rgba(255, 255, 255, .78);
+    }
+
+    .photo-index b {
+      color: var(--orange);
+    }
+
+    .photo-caption {
+      right: max(22px, calc((100vw - 1180px) / 2));
+      bottom: 34px;
+      width: 205px;
+      min-height: 96px;
+      background: var(--accent-gradient);
+      color: #22262a;
+    }
+
+    .ticker {
+      background: var(--accent-gradient);
+      color: #22262a;
+    }
+
+    .ticker-item svg {
+      color: #22262a;
+    }
+
+    .section {
+      background: var(--paper);
+    }
+
+    #lucas {
+      position: relative;
+      isolation: isolate;
+      background: transparent;
+      color: #22262a;
+    }
+
+    #lucas::before {
+      position: absolute;
+      z-index: -1;
+      inset-block: 0;
+      left: 50%;
+      width: 100vw;
+      transform: translateX(-50%);
+      background: #d1d5d9;
+      content: "";
+    }
+
+    #lucas .eyebrow,
+    #lucas .story-copy>p,
+    #lucas .story-person span {
+      color: #58616a;
+    }
+
+    .benefits {
+      border-color: var(--line);
+    }
+
+    .benefit,
+    .benefit+.benefit {
+      border-color: var(--line);
+    }
+
+    .benefit-number,
+    .program-index {
+      color: var(--orange);
+    }
+
+    .programs {
+      background: var(--surface);
+    }
+
+    .program-list,
+    .program {
+      border-color: #3c4147;
+    }
+
+    .program-index {
+      color: var(--orange);
+    }
+
+    .story-label {
+      background: var(--accent-gradient);
+      color: #22262a;
+    }
+
+    #lucas .story-visual {
+      height: auto;
+    }
+
+    #lucas .story-visual img {
+      display: block;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .person-mark {
+      background: var(--accent-gradient);
+      color: #22262a;
+    }
+
+    .contact {
+      background: var(--accent-gradient);
+      color: #22262a;
+    }
+
+    .contact .eyebrow,
+    .contact-copy>p,
+    .contact-form label,
+    .form-note {
+      color: #3b4249;
+    }
+
+    .contact .eyebrow::before {
+      background: #22262a;
+    }
+
+    .contact-form input,
+    .contact-form select {
+      border-color: rgba(34, 38, 42, .35);
+      background: rgba(255, 255, 255, .78);
+      color: #22262a;
+    }
+
+    .contact-form input:focus,
+    .contact-form select:focus {
+      border-color: #22262a;
+    }
+
+    .contact-form .button,
+    .contact-form .button:hover {
+      border-color: #22262a;
+      background: #22262a;
+      color: #fff;
+    }
+
+    .footer {
+      background: #0b0a09;
+      color: #f5f1ec;
+    }
+
+    .footer-links {
+      color: #c5c9ce;
+    }
+
+    .copyright {
+      border-color: #30353a;
+      color: #a7adb4;
+    }
+
+    @keyframes photo-in {
+      from { opacity: .7; transform: scale(1.04); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @media (max-width: 850px) {
+      .hero {
+        min-height: 780px;
+        padding-inline: max(24px, calc((100vw - 680px) / 2));
+      }
+
+      .hero h1 {
+        font-size: clamp(82px, 12vw, 108px);
+      }
+    }
+
+    @media (max-width: 620px) {
+      main {
+        padding-top: 70px;
+      }
+
+      .nav {
+        min-height: 70px;
+        border-bottom-color: rgba(255, 255, 255, .16);
+      }
+
+      .nav-links {
+        top: 70px;
+        padding: 8px 18px 17px;
+        border-color: #383d43;
+        background: #1c1f22;
+      }
+
+      .nav-links>a:not(.button) {
+        padding-block: 12px;
+        border-color: #383d43;
+        color: #f1f3f5;
+      }
+
+      .nav-links .button {
+        color: #22262a;
+      }
+
+      .hero {
+        min-height: min(850px, 100svh);
+        padding: 128px 20px 70px;
+      }
+
+      .hero h1 {
+        font-size: clamp(68px, 16vw, 92px);
+      }
+
+      .hero-text {
+        max-width: 360px;
+        font-size: 13px;
+      }
+
+      .hero-actions {
+        flex-wrap: wrap;
+        gap: 15px 20px;
+      }
+
+      .hero-proof {
+        gap: 8px;
+        margin-top: 27px;
+      }
+
+      .proof-divider {
+        margin-inline: 5px;
+      }
+
+      .photo-index {
+        top: auto;
+        right: 14px;
+        bottom: 185px;
+      }
+
+      .photo-caption {
+        right: 14px;
+        bottom: 24px;
+        width: 170px;
+        min-height: 82px;
+      }
+
+      .ticker-inner {
+        min-height: 56px;
+      }
+
+      .contact-form .button:hover {
+        background: #22262a;
+        color: #fff;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <nav class="nav wrap" aria-label="Navegação principal">
+        <a class="brand" href="#lucas" aria-label="Lucas Martins, início">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M3 12h4l3-8 4 16 3-8h4" />
+          </svg>
+        </span>
+        <span>LUCAS MARTINS<small>PERSONAL TRAINER</small></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-links">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M4 7h16M4 12h16M4 17h16" />
+        </svg>
+      </button>
+      <div class="nav-links" id="nav-links">
+        <a href="#metodo">Nosso jeito</a>
+        <a href="#treinos">Treinos</a>
+        <a href="#lucas">Lucas Martins</a>
+        <a class="button" href="#contato">Agendar avaliação <span aria-hidden="true">↗</span></a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section wrap story" id="lucas">
+      <div class="story-visual">
+        <img src="lucas%20martins.png" alt="Lucas Martins, personal trainer" loading="lazy" />
+        <span class="story-label">Constância > pressa</span>
+      </div>
+      <div class="story-copy">
+        <p class="eyebrow">Seu personal</p>
+        <h2 class="display">Treino com ciência. Atenção de verdade.</h2>
+        <p>Sou Lucas Martins, personal trainer formado em Educação Física e pós-graduando em Neurociência Aplicada à
+          Saúde e Bem-Estar. Uno conhecimento técnico e acompanhamento individual para construir treinos que façam
+          sentido para seus objetivos e sua rotina.</p>
+        <div class="story-person"><span class="person-mark">LM</span>
+          <div><strong>Lucas Martins</strong><span>Personal trainer</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero wrap" id="inicio">
+      <div class="hero-copy">
+        <p class="eyebrow">Personal training · São Paulo</p>
+        <h1 class="display">Força pra<br />viver no<br /><span>seu ritmo.</span></h1>
+        <p class="hero-text">Treino feito para o seu corpo, sua rotina e o que você quer conquistar. Sem fórmula pronta.
+          Com acompanhamento de verdade.</p>
+        <div class="hero-actions">
+          <a class="button" href="#contato">Quero começar <span aria-hidden="true">↗</span></a>
+          <a class="text-link" href="#lucas">Conheça o Lucas <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="hero-proof" aria-label="Mais de 200 alunos acompanhados">
+          <span class="proof-number">200+</span><span class="proof-copy">pessoas treinando<br />com mais intenção</span>
+          <span class="proof-divider" aria-hidden="true"></span>
+          <span class="proof-number">1:1</span><span class="proof-copy">atenção de verdade<br />em cada treino</span>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-photo"><img
+            src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=2000&q=90"
+            alt="Atleta em treino de força na academia" fetchpriority="high" /></div>
+        <span class="photo-index"><b>01</b> — TREINO COM PRESENÇA</span>
+        <div class="photo-caption"><strong>Seu corpo.<br />Seu caminho.</strong><span>O próximo passo começa
+            aqui.</span></div>
+      </div>
+    </section>
+
+    <div class="ticker" aria-label="Treinos para a sua vida">
+      <div class="ticker-inner wrap">
+        <span class="ticker-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="m12 3 1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3Z" />
+            <path d="m19 15 .9 2.1L22 18l-2.1.9L19 21l-.9-2.1L16 18l2.1-.9L19 15Z" />
+          </svg> Movimento com propósito</span>
+        <span class="ticker-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 12h12M12 6v12" />
+            <circle cx="12" cy="12" r="9" />
+          </svg> Treino que cabe na rotina</span>
+        <span class="ticker-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="m12 21-1.4-1.3C5.5 15 2 11.8 2 8a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 3.8-3.5 7-8.6 11.7L12 21Z" />
+          </svg> Evolução no seu tempo</span>
+        <span class="ticker-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 3v18M3 12h18" />
+            <circle cx="12" cy="12" r="9" />
+          </svg> Mais força pra vida real</span>
+      </div>
+    </div>
+
+    <section class="section wrap" id="metodo">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Nosso jeito</p>
+          <h2 class="display">Treinar bem<br />muda tudo.</h2>
+        </div>
+        <p>Seu treino começa com uma conversa. A gente entende de onde você vem e constrói, junto, para onde quer ir.
+        </p>
+      </div>
+      <div class="benefits">
+        <article class="benefit"><span class="benefit-number">01 / ESCUTA</span>
+          <h3>Você vem primeiro</h3>
+          <p>Objetivos, histórico e rotina entram na conta. O plano é seu, não uma planilha genérica.</p>
+        </article>
+        <article class="benefit"><span class="benefit-number">02 / PRESENÇA</span>
+          <h3>De perto, sempre</h3>
+          <p>Orientação individual em cada sessão, com ajustes que respeitam o seu momento.</p>
+        </article>
+        <article class="benefit"><span class="benefit-number">03 / CONSISTÊNCIA</span>
+          <h3>Progresso possível</h3>
+          <p>Metas claras, evolução acompanhada e um ritmo que dá para manter de verdade.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="programs" id="treinos">
+      <div class="wrap">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Como podemos treinar</p>
+            <h2 class="display">Um plano.<br />Seu momento.</h2>
+          </div>
+          <p>Do primeiro treino à próxima meta, a gente encontra o formato que funciona para você.</p>
+        </div>
+        <div class="program-list">
+          <a class="program" href="#contato"><span class="program-index">01</span>
+            <h3>Personal individual</h3>
+            <p>Treino e acompanhamento só seus.</p><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.8">
+              <path d="M5 12h14m-6-6 6 6-6 6" />
+            </svg>
+          </a>
+          <a class="program" href="#contato"><span class="program-index">02</span>
+            <h3>Dupla dinâmica</h3>
+            <p>Treinar junto também faz bem.</p><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.8">
+              <path d="M5 12h14m-6-6 6 6-6 6" />
+            </svg>
+          </a>
+          <a class="program" href="#contato"><span class="program-index">03</span>
+            <h3>Consultoria online</h3>
+            <p>Orientação próxima, onde você estiver.</p><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.8">
+              <path d="M5 12h14m-6-6 6 6-6 6" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contato">
+      <div class="contact-inner wrap">
+        <div class="contact-copy">
+          <p class="eyebrow">Seu próximo passo</p>
+          <h2 class="display">Vamos tirar<br />do papel?</h2>
+          <p>Conta um pouco do que você busca. A primeira conversa é por nossa conta e sem compromisso.</p>
+        </div>
+        <form class="contact-form" id="contact-form">
+          <label for="name">Como podemos te chamar?</label>
+          <input id="name" name="name" type="text" placeholder="Seu nome" autocomplete="name" required />
+          <label for="goal">O que você busca?</label>
+          <select id="goal" name="goal" required>
+            <option value="" disabled selected>Escolha seu foco</option>
+            <option>Mais força e condicionamento</option>
+            <option>Voltar a ter uma rotina ativa</option>
+            <option>Treino individual ou em dupla</option>
+            <option>Consultoria online</option>
+            <option>Quero conversar sobre possibilidades</option>
+          </select>
+          <button class="button" type="submit">Agendar conversa <span aria-hidden="true">↗</span></button>
+          <p class="form-note">Sem pressão. Só uma boa conversa para começar.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-main wrap">
+      <a class="brand" href="#lucas" aria-label="Lucas Martins, voltar ao início"><span class="brand-mark"
+          aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 12h4l3-8 4 16 3-8h4" />
+          </svg></span><span>LUCAS MARTINS<small>PERSONAL TRAINER</small></span></a>
+      <div class="footer-links"><a href="#metodo">Nosso jeito</a><a href="#treinos">Treinos</a><a href="#lucas">Lucas
+          Martins</a><a href="#contato">Contato</a><a href="https://instagram.com" target="_blank"
+          rel="noreferrer">Instagram ↗</a>
+      </div>
+    </div>
+    <div class="copyright">
+      <div class="wrap"><span>© 2026 Lucas Martins Personal Training</span><span>Feito para acompanhar a vida real.</span></div>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.querySelector(".menu-toggle");
+    const navigation = document.querySelector(".nav-links");
+
+    menuButton.addEventListener("click", () => {
+      const isOpen = menuButton.getAttribute("aria-expanded") === "true";
+      menuButton.setAttribute("aria-expanded", String(!isOpen));
+      menuButton.setAttribute("aria-label", isOpen ? "Abrir menu" : "Fechar menu");
+      navigation.classList.toggle("is-open", !isOpen);
+    });
+
+    navigation.addEventListener("click", (event) => {
+      if (event.target.closest("a")) {
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.setAttribute("aria-label", "Abrir menu");
+        navigation.classList.remove("is-open");
+      }
+    });
+
+    document.querySelector("#contact-form").addEventListener("submit", (event) => {
+      event.preventDefault();
+      const formData = new FormData(event.currentTarget);
+      const message = `Oi! Meu nome é ${formData.get("name")} e quero conversar sobre: ${formData.get("goal")}.`;
+      window.open(`https://wa.me/?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+    });
+  </script>
+</body>
+
+</html>
