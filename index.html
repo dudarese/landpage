@@ -1583,7 +1583,7 @@
       event.preventDefault();
       const formData = new FormData(event.currentTarget);
       const message = `Oi! Meu nome é ${formData.get("name")} e quero conversar sobre: ${formData.get("goal")}.`;
-      window.open(`https://wa.me/?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+      window.open(`https://wa.me/555197523407?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
     });
   </script>
 </body>
