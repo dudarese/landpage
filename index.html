@@ -694,14 +694,23 @@
       gap: 12px;
     }
 
+    .creator-contact {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .creator-link,
     .whatsapp-credit {
       display: inline-flex;
       align-items: center;
-      color: #c5c9ce;
+      color: #25d366;
+      transition: color .2s ease;
     }
 
+    .creator-link:hover,
     .whatsapp-credit:hover {
-      color: var(--orange);
+      color: #128c4a;
     }
 
     .whatsapp-credit svg {
@@ -1608,16 +1617,20 @@
         <span>© 2026 Lucas Martins Personal Training</span>
         <div class="copyright-credit">
           <span>Feito para acompanhar a vida real.</span>
-          <span>Criado por DR</span>
-          <a class="whatsapp-credit" href="https://wa.me/5551984425140" target="_blank" rel="noopener noreferrer"
-            aria-label="Fale pelo WhatsApp: 51 98442-5140">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-              stroke-linejoin="round" aria-hidden="true">
-              <path d="M20.3 11.7a8.3 8.3 0 0 1-12.2 7.4L4 20l.9-4A8.3 8.3 0 1 1 20.3 11.7Z" />
-              <path
-                d="M9 8.5c.2-.5.4-.5.7-.5h.5c.2 0 .3.1.4.4l.7 1.6c.1.2.1.4 0 .5l-.5.6c-.2.2-.2.3 0 .5.5.9 1.2 1.6 2.1 2.1.2.1.4.1.5-.1l.7-.8c.2-.2.3-.2.5-.1l1.6.8c.2.1.3.2.3.4 0 .3-.2 1.1-.7 1.4-.5.4-1.1.6-1.9.4-1.1-.2-2.4-.9-3.7-2.1-1.1-1-1.9-2.3-2.1-3.3-.2-.8 0-1.4.4-1.8Z" />
-            </svg>
-          </a>
+          <div class="creator-contact">
+            <a class="creator-link" href="https://wa.me/5551984425140" target="_blank" rel="noopener noreferrer">
+              Criado por DR
+            </a>
+            <a class="whatsapp-credit" href="https://wa.me/5551984425140" target="_blank"
+              rel="noopener noreferrer" aria-label="Fale pelo WhatsApp: 51 98442-5140">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <path d="M20.3 11.7a8.3 8.3 0 0 1-12.2 7.4L4 20l.9-4A8.3 8.3 0 1 1 20.3 11.7Z" />
+                <path
+                  d="M9 8.5c.2-.5.4-.5.7-.5h.5c.2 0 .3.1.4.4l.7 1.6c.1.2.1.4 0 .5l-.5.6c-.2.2-.2.3 0 .5.5.9 1.2 1.6 2.1 2.1.2.1.4.1.5-.1l.7-.8c.2-.2.3-.2.5-.1l1.6.8c.2.1.3.2.3.4 0 .3-.2 1.1-.7 1.4-.5.4-1.1.6-1.9.4-1.1-.2-2.4-.9-3.7-2.1-1.1-1-1.9-2.3-2.1-3.3-.2-.8 0-1.4.4-1.8Z" />
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
     </div>
