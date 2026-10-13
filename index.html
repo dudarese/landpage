@@ -493,7 +493,8 @@
     }
 
     .story-visual {
-      position: relative;
+      display: flex;
+      flex-direction: column;
       height: 405px;
     }
 
@@ -505,9 +506,8 @@
     }
 
     .story-label {
-      position: absolute;
-      right: 0;
-      bottom: 22px;
+      align-self: center;
+      margin-top: 12px;
       padding: 17px 20px;
       background: var(--lime);
       font-size: 10px;
@@ -546,6 +546,8 @@
       color: var(--lime);
       font-size: 11px;
       font-weight: 700;
+      line-height: 1;
+      text-align: center;
     }
 
     .story-person strong {
@@ -553,7 +555,7 @@
       font-size: 11px;
     }
 
-    .story-person span {
+    .story-person > div > span {
       display: block;
       color: var(--muted);
       font-size: 10px;
@@ -1424,7 +1426,7 @@
   <main>
     <section class="section wrap story" id="lucas">
       <div class="story-visual">
-        <img src="lucas%20martins.png" alt="Lucas Martins, personal trainer" loading="lazy" />
+        <img src="novafoto_lucas.jpg" alt="Lucas Martins, personal trainer" loading="lazy" />
         <span class="story-label">Constância > pressa</span>
       </div>
       <div class="story-copy">
